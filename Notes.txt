@@ -9,3 +9,19 @@
   - Is there any way to read external information in?
 
   
+- QT interlock
+  - Can't initiate QT with landing gear down
+  - QT can still be spooled up
+  
+- Landing Gear interlock
+  - Can't raise gear with engines off
+  - Can't toggle gear when gear is in motion (need to time this)
+  - Blinkey light when gear is in motion
+  
+- left stick hat
+  - up sets button to afterburner
+  - down sets button to space brake
+  - left toggles decouple
+  - right toggles cruise
+  - center click toggles rear view
+  
