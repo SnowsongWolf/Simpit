@@ -1,6 +1,7 @@
 - DirectX Limits
   - 32 Buttons
   - 8 Axis
+  - 8 direction digital hat
 
 - Things to learn
   - How do I unbind an axis?
