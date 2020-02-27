@@ -1,0 +1,9 @@
+- DirectX Limits
+  - 32 Buttons
+  - 8 Axis
+
+- Things to learn
+  - How do I unbind an axis?
+  - Is there any way to read external information in?
+    - May be able to assign an axis to null which is 0
+  
