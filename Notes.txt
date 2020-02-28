@@ -25,3 +25,57 @@
   - right toggles cruise
   - center click toggles rear view
   
+Flight mode:
+Warthog JOYX -> DX_X_AXIS
+Warthog JOYY -> DX_Y_AXIS
+Warthog THR_LEFT -> 0
+Warthog THR_RIGHT -> DX_THROTTLE_AXIS
+Warthog THR_FC -> DX_SLIDER_AXIS
+T.16000 JOYX -> DX_XROT_AXIS
+T.16000 JOYY -> DX_ROTY_AXIS
+T.16000 RUDDER -> DX_ROTZ_AXIS
+
+Hover mode:
+Use pedals for thrust/brake
+Use stick for steering
+Use rudder for roll
+
+Ground mode:
+Use pedals for thrust/brake
+Use stick for steering
+Use rudder for roll
+
+
+Simulate coast - On ground throttle will have a slow falloff when letting off accel peddal, will have much faster falloff when hitting brake pedal
+
+Use left throttle as gear shift.  Below X = reverse, above X = multiplier?
+Looks like I will have to use Trim for this.  In theory I can unbind an axis and just use trim to set the value.
+
+This is how the system is doing it
+//--------------------------------------------------------------------
+//	LED Functions
+//--------------------------------------------------------------------
+int Blink_LED(int led, int blinkrate)
+{
+	// This function will blink an LED
+	//
+    // Parameters:
+	//	int led: The Throttle LED to blink
+	//	int blinkrate: The rate at which to blink the LED
+	//
+    // Returns:
+		
+	ActKey(KEYON + CHAIN(LED(&Throttle, LED_ONOFF, LED_CURRENT + led), D(blinkrate), LED(&Throttle, LED_ONOFF, LED_CURRENT - led)));
+}
+
+int BlinkAfterburner()
+{
+	// This function will blink LED1 when the Afterburner toggle is on
+	//
+    // Parameters:
+	//
+    // Returns:
+    
+	ActKey(KEYON + StopAutoRepeat(AfterburnerRIDX));
+	ActKey(KEYON + REXEC(AfterburnerRIDX, 300, "Blink_LED(LED1, 150);", RNOSTOP));
+}
