@@ -1,70 +1,37 @@
-//-----------------------------------------------------------------------------
-//    Thrustmaster Warthog Script for Star Citizen 3.8.2
-//    Copyright (C) 2020 Agent Snow
-//    
-//    This program is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//    This program is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with this program.  If not, see <http://www.gnu.org/licenses/>
-//-----------------------------------------------------------------------------
+include "target.tmh"
 
-include "target.tmh"            // Everyone needs this.  And everyone needs to get a blimp.
-include "bindings370_Snow.ttm"  // Should really load fresh bindings at some point
+float lastVal;
 
-char log = 1;                   // Send log information to the console
-char echo = 1;                  // Send echo commands to the console
-int delay_ms = 200;             // Used in LED blink code
-alias scVersion = "Alpha 3.8.2" // Developed for this version of Star Citizen
-char afterburner = 0;           // Afterburner flag
-char camMode = 0;               // Camera mode flag
-char gearMode = 3;              // Landing Gear Status (0 up, 1 going up, 2 going down, 3 down)
-char lights = 0;                // Headlights flag
-char engines = 0;               // Engines flag
-char mainPower = 0;             // Main power flag
-char weapons = 0;               // Weapons flag
-char shields = 0;               // Shields flag
-
-//--------------------------------------------------------------------
-// Program Startup
-//--------------------------------------------------------------------
+//program startup
 int main()
 {
-	// Main entry point for the script
+    if(Init(&EventHandle)) return 1; // declare the event handler, return on error
     
-	printf("\x0aStartCitizen %s Thrustmaster Warthog Profile\x0a", &scVersion);
+    MapAxis(&Joystick, JOYX, DX_X_AXIS);
+    MapAxis(&Joystick, JOYY, DX_Y_AXIS);
+    MapAxis(&Throttle, THR_LEFT, 0);
+    //MapAxis(&Throttle, THR_RIGHT, DX_THROTTLE_AXIS);
+    MapAxis(&Throttle, THR_RIGHT, 0);
+    MapAxis(&Throttle, THR_FC, DX_SLIDER_AXIS, AXIS_REVERSED);
+    MapAxis(&T16000L, JOYX, DX_XROT_AXIS);
+    MapAxis(&T16000L, JOYY, DX_YROT_AXIS, AXIS_REVERSED);
+    MapAxis(&T16000L, RUDDER, DX_ZROT_AXIS, AXIS_REVERSED);
 	
-	if (log_level > 0)
-		printf("Logging: log_level set to %d\x0a\x0a", log_level);
-	
-	Configure(&HCougar, MODE_EXCLUDED);
-	Configure(&JoystickF18, MODE_EXCLUDED);
-	Configure(&T16000, MODE_EXCLUDED);
-	//Configure(&T16000L, MODE_EXCLUDED);     // Using HOTASAS - Hands On Throttle And Stick And Stick
-	Configure(&LMFD, MODE_EXCLUDED);
-	Configure(&RMFD, MODE_EXCLUDED);
-	Configure(&TFRPRudder, MODE_EXCLUDED);
-	Configure(&TWCSThrottle, MODE_EXCLUDED);
-	Configure(&TFRPHARudder, MODE_EXCLUDED);
-	
-  if(Init(&EventHandle)) return 1;
+	//add initialization code here
+	//int this = fopen("this.txt","w");
+}
 
-	// Initialize keyboard
-	SetKBRate(32, 50);
-	SetKBLayout(KB_ENG);
+//event handler
+int EventHandle(int type, alias o, int x)
+{
+	float value = Throttle[THR_RIGHT] / 64 + 511;
+	if (value != lastVal) {
+		TrimDXAxis(DX_YROT_AXIS, SET(value));
+		printf("%f\x0a",value);
+		lastVal = value;
+	};
 	
-	// Set the Boat Switch as the U/M/D layer switch
-	SetShiftButton(&Joystick, S4, &Throttle, BSF, BSB, 0);
+    DefaultMapping(&o, x);
 	
-	// Call all mapping functions
-	loadAllMappings();
-	initializeLighting();
-	initializeSoftware();
+	//add event handling code here
 }
