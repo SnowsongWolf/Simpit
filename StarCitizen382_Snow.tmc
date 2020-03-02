@@ -1,6 +1,6 @@
 include "target.tmh"
 
-float lastVal;
+int lastVal;
 
 //program startup
 int main()
@@ -24,10 +24,10 @@ int main()
 //event handler
 int EventHandle(int type, alias o, int x)
 {
-	float value = Throttle[THR_RIGHT] / 64 + 511;
+	int value = Throttle[THR_RIGHT] / 64 + 511;
 	if (value != lastVal) {
 		TrimDXAxis(DX_YROT_AXIS, SET(value));
-		printf("%f\x0a",value);
+		printf("%i\x0a",value);
 		lastVal = value;
 	};
 	
