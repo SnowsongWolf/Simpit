@@ -51,6 +51,8 @@ Simulate coast - On ground throttle will have a slow falloff when letting off ac
 Use left throttle as gear shift.  Below X = reverse, above X = multiplier?
 Looks like I will have to use Trim for this.  In theory I can unbind an axis and just use trim to set the value.
 
+Maybe not.  Looks like I can use Axis(axis, value) to manually set a virtual DX axis to a value of my choice.  Though this is functionally the same as using trim(axis, SET(value)) but it's a little less typing I s'pose.  We should try to do this only when we get a pedal event update.
+
 This is how the system is doing it
 //--------------------------------------------------------------------
 //	LED Functions
