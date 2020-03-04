@@ -24,7 +24,8 @@ int main()
 //event handler
 int EventHandle(int type, alias o, int x)
 {
-	// if (&o == &Rudder)				// Check if input from rudder
+	// if (&o == &Rudder)					// Check if input from rudder
+	// if (x >= IN_POSITION_AXES && x < IN_POSITION_HAT)	// Check if input is an axis update.  Need to figure out the range for the pedals.
 	
 	int value = Throttle[THR_RIGHT] / 64 + 511;
 	if (value != lastVal) {
