@@ -24,6 +24,8 @@ int main()
 //event handler
 int EventHandle(int type, alias o, int x)
 {
+	// if (&o == &Rudder)				// Check if input from rudder
+	
 	int value = Throttle[THR_RIGHT] / 64 + 511;
 	if (value != lastVal) {
 		TrimDXAxis(DX_YROT_AXIS, SET(value));
