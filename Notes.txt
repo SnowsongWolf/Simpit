@@ -53,6 +53,36 @@ Looks like I will have to use Trim for this.  In theory I can unbind an axis and
 
 Maybe not.  Looks like I can use Axis(axis, value) to manually set a virtual DX axis to a value of my choice.  Though this is functionally the same as using trim(axis, SET(value)) but it's a little less typing I s'pose.  We should try to do this only when we get a pedal event update.
 
+Screens:
+
+Target
+cycle targets
+pin targets
+deselect targets
+DMS selects targeting mode (friendly, enemy, pinned, all)
+TMS cycles/clears target
+
+AIM9
+lock targets
+fire missile
+cycle gimbal mode
+sub targeting
+
+Power
+to weapons/toggle
+to engines/toggle
+to shields/toggle
+reset/flight ready
+
+Camera
+freeview
+rear view
+orbit/strafe
+zoom/strafe
+
+Some kind of display on monitor to denote the current mode?  Otherwise use LEDs for now.
+
+
 This is how the system is doing it
 //--------------------------------------------------------------------
 //	LED Functions
