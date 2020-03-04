@@ -68,17 +68,17 @@ fire missile
 cycle gimbal mode
 sub targeting
 
-Power
-to weapons/toggle
-to engines/toggle
-to shields/toggle
-reset/flight ready
-
 Camera
 freeview
 rear view
 orbit/strafe
 zoom/strafe
+
+Power
+to weapons/toggle
+to engines/toggle
+to shields/toggle
+reset/flight ready
 
 Some kind of display on monitor to denote the current mode?  Otherwise use LEDs for now.
 
