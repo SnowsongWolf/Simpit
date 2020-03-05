@@ -7,7 +7,7 @@
   - How do I unbind an axis?
     - May be able to assign an axis to null which is 0
   - Is there any way to read external information in?
-
+    - Yep, we have access to the fopen() set of commands.
   
 - QT interlock
   - Can't initiate QT with landing gear down
@@ -59,7 +59,13 @@ Use boat switch as mode select:  weapons free, safety, mine/scan
 Use China hat as camera select/scan range
 In weapons free, Target is default/long press
 In safety Power is default/long press
+Mic switch up bind to Discord PTT.  Mic switch press toggle PTT on/off.
 Mic switch will be duplicated to left stick hat
+
+Pinkie switch
+- forward lights on
+- center lights off
+- aft lights dependent on landing gear/hover mode
 
 Target
 cycle targets
