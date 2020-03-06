@@ -96,14 +96,30 @@ Some kind of display on monitor to denote the current mode?  Otherwise use LEDs 
 
 Things to track:
 SOI (Sensor of Interest)
-SPI (Sensor Point of Interest)
+Sub SOI
 Landing gear (down, moving down, moving up, up)
 Flight mode
 Lights mode
 Travel mode
 Camera mode
 PTT mode
+CM mode
+CM program?  This will definitely require an external display.
 
+PROG	CHAFF QTY	FLARE QTY	INTERVAL	CYCLE
+A	2		0		1		10
+B	4		0		0.5		10
+C	0		4		1		10
+D	2		2		1		10
+E	2		2		0.5		10
+F	4		4		1		10
+G	4		4		0.5		10
+H	1		0		1		1
+I	2		0		1		1
+J	0		1		1		1
+K	0		2		1		1
+L	1		0		1		20
+M	0		1		1		20
 
 This is how the system is doing it
 //--------------------------------------------------------------------
