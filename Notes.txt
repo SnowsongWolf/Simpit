@@ -94,17 +94,21 @@ zoom/strafe
 
 Some kind of display on monitor to denote the current mode?  Otherwise use LEDs for now.
 
+I think I want to use the pinkie lever as a resync, so holding pinkie lever will cause variables to update but no keystrokes to be sent.  I'll want to build this into my functions early.
+
 Things to track:
 SOI (Sensor of Interest)
 Sub SOI
-Landing gear (down, moving down, moving up, up)
-Flight mode
-Lights mode
-Travel mode
-Camera mode
-PTT mode
-CM mode
+Landing gear (0 = down, 1 = moving down, 2 = moving up, 3 = up)
+VTOL (0 = off, 1 = on)
+Flight mode (0 = safe, 1 = combat, 2 = scan/mine)
+Lights mode (0 = off, 1 = on, 2 = landing/vtol)
+Travel mode (0 = ship, 1 = hover, 2 = ground)
+Camera mode (0 = normal, 1 = rear view, 2 = facecam, 3 = freecam)
+PTT mode (0 = ptt hold, 1 = ptt latch, 2 = vox)
+CM type (0 = flare, 1 = chaff)
 CM program?  This will definitely require an external display.
+Thinking programs will be single chaff, single flare, single both, multi chaff, multi flare, multi both.
 
 PROG	CHAFF QTY	FLARE QTY	INTERVAL	CYCLE
 A	2		0		1		10
