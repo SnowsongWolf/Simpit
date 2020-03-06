@@ -1,1 +1,47 @@
-blah
+// Definitions to use with StarCitizen382_Snow.tmc Script
+
+// Sensor of Interest values
+define  SOI_POW 0     // Power management
+define  SOI_CAM 1     // Camera control
+define  SOI_TGT 2     // Targeting
+define  SOI_AIM 3     // Missile control
+
+// Landing Gear values
+define  LDG_DWN 0     // Gear down
+define  LDG_MVD 1     // Gear moving down
+define  LDG_MVU 2     // Gear moving up
+define  LDG_UP  3     // Gear up
+
+// VTOL/Hover values
+define  HOV_OFF 0     // VTOL mode off
+define  HOV_ON  1     // VTOL mode on
+
+// Ship Flight Mode values
+define  SHP_SAF 0     // Weapons Safe mode
+define  SHP_FRE 1     // Weapons Free mode
+define  SHP_MIN 2     // Mining/Scanning mode
+
+// Lights values
+define  LGT_OFF 0     // External lights off
+define  LGT_ON  1     // External lights on
+define  LGT_AUT 2     // External lights landing gear/VTOL mode dependent
+
+// Travel Mode values
+define  TRV_SHP 0     // Ship flight mode
+define  TRV_HOV 1     // Hover flight mode
+define  TRV_GND 2     // Ground vehicle wheeled mode
+
+// Camera Mode values
+define  CAM_FPV 0     // First person/normal camera
+define  CAM_REV 1     // Reverse view
+define  CAM_FAC 2     // Face closeup view
+define  CAM_FRE 3     // Free orbit cam
+
+// PTT Mode values
+define  PTT_HLD 0     // Hold button for PTT
+define  PTT_TGL 1     // Toggle on/off for PTT
+define  PTT_VOX 2     // Voice activation (local only, use HLD for other coms)
+
+// Countermeasure selection
+define  CM_FLAR 0     // Flares selected
+define  CM_CHAF 1     // Chaff selected
