@@ -94,6 +94,16 @@ zoom/strafe
 
 Some kind of display on monitor to denote the current mode?  Otherwise use LEDs for now.
 
+Things to track:
+SOI
+Sub SOI
+Landing gear (down, moving down, moving up, up)
+Flight mode
+Lights mode
+Travel mode
+Camera mode
+PTT mode
+
 
 This is how the system is doing it
 //--------------------------------------------------------------------
