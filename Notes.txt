@@ -67,46 +67,46 @@ Pinkie switch
 - center lights off
 - aft lights dependent on landing gear/hover mode
 
-Target
+Power (0)
+to weapons/toggle
+to engines/toggle
+to shields/toggle
+reset/flight ready
+
+Camera (1)
+freeview
+rear view
+orbit/strafe
+zoom/strafe
+
+Target (2)
 cycle targets
 pin targets
 deselect targets
 DMS selects targeting mode (friendly, enemy, pinned, all)
 TMS cycles/clears target
 
-AIM9
+AIM9 (3)
 lock targets
 fire missile
 cycle gimbal mode
 sub targeting
-
-Power
-to weapons/toggle
-to engines/toggle
-to shields/toggle
-reset/flight ready
-
-Camera
-freeview
-rear view
-orbit/strafe
-zoom/strafe
 
 Some kind of display on monitor to denote the current mode?  Otherwise use LEDs for now.
 
 I think I want to use the pinkie lever as a resync, so holding pinkie lever will cause variables to update but no keystrokes to be sent.  I'll want to build this into my functions early.
 
 Things to track:
-SOI (Sensor of Interest)
+SOI (Sensor of Interest SOI POW, CAM, TGT, AIM)
 Sub SOI
-Landing gear (0 = down, 1 = moving down, 2 = moving up, 3 = up)
-VTOL (0 = off, 1 = on)
-Flight mode (0 = safe, 1 = combat, 2 = scan/mine)
-Lights mode (0 = off, 1 = on, 2 = landing/vtol)
-Travel mode (0 = ship, 1 = hover, 2 = ground)
-Camera mode (0 = normal, 1 = rear view, 2 = facecam, 3 = freecam)
-PTT mode (0 = ptt hold, 1 = ptt latch, 2 = vox)
-CM type (0 = flare, 1 = chaff)
+Landing gear (LDG DWN, MVD, MVU, UP)
+VTOL (HOV OFF, ON)
+Flight mode (SHP SAF, FRE, MIN)
+Lights mode (LGT OFF, ON, AUT)
+Travel mode (TRV SHP, HOV, GND)
+Camera mode (CAM FPV, REV, FAC, FRE)
+PTT mode (PTT HLD, TGL, VOX)
+CM type (CM FLAR, CHAF)
 CM program?  This will definitely require an external display.
 Thinking programs will be single chaff, single flare, single both, multi chaff, multi flare, multi both.
 
